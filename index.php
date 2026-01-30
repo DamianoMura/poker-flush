@@ -18,8 +18,12 @@ function giveNewHand($deck)
 }
 function checkHand($hand)
 {
-  for ($x = 1; $x <= 5; $x++) {
+  $flush = true;
+  for ($x = 1; $x < 5; $x++) {
+    if ($hand[0]->suit !== $hand[$x]) $flush = false;
   }
+
+  return $flush;
 }
 ?>
 <!DOCTYPE html>
@@ -43,7 +47,7 @@ function checkHand($hand)
     </h2>
 
   </header>
-  <main class="container mx-auto">
+  <main class="container mx-auto ">
     <?php if ($hand === null) { ?>
 
 
@@ -72,7 +76,7 @@ function checkHand($hand)
         </div>
       </div>
     <?php } else { ?>
-      <div class="my-6 flex items-center ">
+      <div class="my-6 flex justify-center">
         <?php
         foreach ($hand as $card) {
         ?>
@@ -87,14 +91,19 @@ function checkHand($hand)
           </div>
         <?php
         }
+
         ?>
       </div>
-    <?php } ?>
+      <div class="text-center my-3"> <?php
+                                      if (checkHand($hand)) echo 'You made It!!! That\'s a FLUSH!!!!';
+                                      else echo 'OH NOO! That\'s not a FLUSH!!!! try again!!'
+                                      ?>
+      <?php } ?>
 
-    <form action="index.php" class="flex justify-center">
-      <input type="hidden" name="give-cards" value="true">
-      <button class="px-4 py-2 border rounded-lg bg-green200">Show Cards</button>
-    </form>
+      <form action="index.php" class="flex justify-center mt-3">
+        <input type="hidden" name="give-cards" value="true">
+        <button class="px-4 py-2 border rounded-lg bg-green200">Show Cards</button>
+      </form>
 
   </main>
 
