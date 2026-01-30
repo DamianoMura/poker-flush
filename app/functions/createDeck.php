@@ -17,4 +17,3 @@ foreach ($suits as $suit) {
     array_push($deck, $newCard);
   }
 }
-var_dump($deck);
