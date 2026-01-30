@@ -12,9 +12,15 @@ function giveNewHand($deck)
 
   shuffle($deck);
   $hand = array_slice($deck, 0, 5);
+
+
   return $hand;
 }
-
+function checkHand($hand)
+{
+  for ($x = 1; $x <= 5; $x++) {
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +29,7 @@ function giveNewHand($deck)
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poker Flush</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
@@ -30,8 +37,8 @@ function giveNewHand($deck)
 <body>
   <header>
 
-    <h1 class="text-center text-2xl">Welcome to CodeWars</h1>
-    <h2 class="text-center">
+    <h1 class="text-center text-2xl p-2 bg-slate-500 text-white">Welcome to CodeWars</h1>
+    <h2 class="text-center py-2 bg-slate-200">
       Poker Flush
     </h2>
 
@@ -65,8 +72,23 @@ function giveNewHand($deck)
         </div>
       </div>
     <?php } else { ?>
-      <div class="container mx-auto">here are your cards</div>
+      <div class="my-6 flex items-center ">
+        <?php
+        foreach ($hand as $card) {
+        ?>
+          <div class="p-3 <?php if ($card->suit == 'H' || $card->suit == 'D')             echo "text-red-500";
+                          else echo "text-black"; ?> ">
+            <div class="flex">
+              <?php echo $card->translateValue() ?>
+              <i class="bi bi-suit-<?php echo $card->translateSuit() ?>-fill"></i>
+            </div>
 
+
+          </div>
+        <?php
+        }
+        ?>
+      </div>
     <?php } ?>
 
     <form action="index.php" class="flex justify-center">
@@ -76,7 +98,7 @@ function giveNewHand($deck)
 
   </main>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>

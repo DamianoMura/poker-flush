@@ -12,7 +12,7 @@ foreach ($suits as $suit) {
   for ($x = 1; $x < 14; $x++) {
 
     $newCard = new Card();
-    $newCard->value = $newCard->translateValue($x);
+    $newCard->value = $x;
     $newCard->suit = $suit;
     array_push($deck, $newCard);
   }
