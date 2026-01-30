@@ -20,7 +20,7 @@ function checkHand($hand)
 {
   $flush = true;
   for ($x = 1; $x < 5; $x++) {
-    if ($hand[0]->suit !== $hand[$x]) $flush = false;
+    if ($hand[0]->suit !== $hand[$x]->suit) $flush = false;
   }
 
   return $flush;
@@ -102,7 +102,7 @@ function checkHand($hand)
 
       <form action="index.php" class="flex justify-center mt-3">
         <input type="hidden" name="give-cards" value="true">
-        <button class="px-4 py-2 border rounded-lg bg-green200">Show Cards</button>
+        <button class="px-4 py-2 border rounded-lg bg-green200">Shuffle and Give Cards</button>
       </form>
 
   </main>
