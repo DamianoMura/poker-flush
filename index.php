@@ -51,7 +51,7 @@ function checkHand($hand)
     <?php if ($hand === null) { ?>
 
 
-      <div class="container mx-auto">
+      <div class="container mx-auto p-6">
         <p>
           Determine if the poker hand is flush, meaning if the five cards are of the same suit.
         </p>
