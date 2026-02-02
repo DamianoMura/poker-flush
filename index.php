@@ -9,13 +9,11 @@ if (isset($_GET['give-cards'])) {
 
 function giveNewHand($deck)
 {
-
   shuffle($deck);
   $hand = array_slice($deck, 0, 5);
-
-
   return $hand;
 }
+
 function checkHand($hand)
 {
   $flush = true;
@@ -100,7 +98,7 @@ function checkHand($hand)
                                       ?>
       <?php } ?>
 
-      <form action="index.php" class="flex justify-center mt-3">
+      <form action="index.php" class="flex justify-center my-3">
         <input type="hidden" name="give-cards" value="true">
         <button class="px-4 py-2 border rounded-lg bg-green200">Shuffle and Give Cards</button>
       </form>
