@@ -24,8 +24,8 @@ The possible card values are 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
 
 3- tutto in una pagina: la comanda dell'esercizio scompare non appena si clicca sul bottone che poi triggera una serie di funzioni:
 
-- giveNewHand($deck) : esegue uno shuffle nell'array $deck che contiene tutte le carte ordinate , effettua uo slice delle prime 5 e le restituisce come $hand
+- giveNewHand($deck) : esegue uno shuffle nell'array $deck che contiene tutte le carte ordinate , effettua uno slice delle prime 5 carte e le restituisce come $hand
 - per ogni carta viene visualizzato il valore ($card->translateValue()) (eg: 1 diventa A) e il seme ($card->translateSuit()) tradotto in modo da richiamare un'icona di bootstrap icon
   -function checkHand($hand) invece si occupa di controllare che tutte le carte siano dello stesso seme ($card->suit) e di fare l'echo del messaggio corrispondente
 
-essendo il tutto eseguito con un form, lo script viene eseguitoogni qual volta si clicchi sul pulsante e viene re iterato partendo dal mazzo ordinato.
+essendo il tutto eseguito con un form, lo script viene eseguito ogni qual volta si clicchi sul pulsante e viene re iterato partendo dal mazzo ordinato.
